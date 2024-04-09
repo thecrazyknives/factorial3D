@@ -1,0 +1,7 @@
+This benchmark was performed with the following parameters:
+
+Executions per case: 1
+Max size of the matriz: 1000
+Step in size dimension: 10
+Max random number: 1000
+Step in rand dimension: 10
