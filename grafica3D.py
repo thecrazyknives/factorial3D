@@ -40,7 +40,7 @@ fig.add_trace(go.Scatter3d(
     marker=dict(
         size=5,         
         color=results_row,  
-        colorscale='Inferno',
+        colorscale='earth',
         opacity=0.8  
     ),
     name='Rows'
@@ -54,7 +54,7 @@ fig.add_trace(go.Scatter3d(
     marker=dict(
         size=5,        
         color=results_column,  
-        colorscale='Magma',  
+        colorscale='prgn',  
         opacity=0.8     
     ),
     name='Columns'
