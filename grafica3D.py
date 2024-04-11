@@ -4,15 +4,23 @@ import csv
 
 # Data extraction
 data = []
-with open('resultRowColumn.txt', newline='') as file:
-    CSV_operator = csv.reader(file)
-    next(CSV_operator)
-    for fila in CSV_operator:
-        data.append([float(fila[0]), float(fila[1]), float(fila[2]), float(fila[3])])
-
+try:
+    with open('resultRowColumn.txt', newline='') as file:
+        CSV_operator = csv.reader(file)
+        next(CSV_operator)
+        for fila in CSV_operator:
+            data.append([float(fila[0]), float(fila[1]), float(fila[2]), float(fila[3])])
+except FileNotFoundError:
+    path = input("Path to your results file: ")
+    with open(path, newline='') as file:
+        CSV_operator = csv.reader(file)
+        next(CSV_operator)
+        for fila in CSV_operator:
+            data.append([float(fila[0]), float(fila[1]), float(fila[2]), float(fila[3])])
+            
+# Data organizing
 data = np.array(data)
 
-# Data organizing
 size_row = data[:, 0]
 random_row = data[:, 1]
 results_row = data[:, 2]
